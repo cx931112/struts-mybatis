@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.itany.p2p.dao.UserDao">
+	<sql id="userColumn">
+		id,
+		userName,
+		loginName,
+		loginPassword
+	</sql>
+	
+	
+	
+	<select	id="getAllUserName"	resultType="com.itany.p2p.entity.User">
+		select	*	from	cx
+	</select>
+	<insert	id="regist"	parameterType="com.itany.p2p.entity.User">
+		insert	into	cx	(username,password,email,identity)	
+		values(#{userName},#{passWord},#{email},#{identity})
+	</insert>
+	<select	id="loginCheck"	parameterType="com.itany.p2p.entity.User"	resultType="int">
+		select	count(*)	from	cx	
+		where	username=#{userName}	and		password=#{passWord}	
+	</select>
+	<select	id="toLogin"	parameterType="com.itany.p2p.entity.User"	resultType="com.itany.p2p.entity.User">
+		select	*	from	cx	
+		where	username=#{userName}	and	password=#{passWord}
+	</select>
+	<select	id="getAllUser"	resultType="com.itany.p2p.entity.User">
+		select	*	from	cx
+		
+	</select>
+	<delete	id="deleteUser"	parameterType="com.itany.p2p.entity.User">
+	delete	from	cx	
+	where	id=#{id}
+	</delete>
+	<select	id="checkAdmin"	parameterType="com.itany.p2p.entity.User"	resultType="int">
+	select	count(*)	from	cx
+	where	username=#{userName}
+	</select>
+	<insert	id="adminAdd"	parameterType="com.itany.p2p.entity.User">
+		insert	into	cx	(username,password)
+		values(#{userName},#{passWord})
+		
+	</insert>
+	<update	id="changeStatus"	parameterType="com.itany.p2p.entity.User">
+		update	cx	set	status=#{status}
+		where	id=#{id}
+	</update>
+	<select	id="selectPassByName"	parameterType="com.itany.p2p.entity.User"	resultType="com.itany.p2p.entity.User">
+		select	*	from	cx	
+		where	username=#{userName}
+	</select>
+	<update	id="passChange"	parameterType="com.itany.p2p.entity.User">
+		update		cx	set	password=#{passWord}
+		where	username=#{userName}
+	</update>
+</mapper>

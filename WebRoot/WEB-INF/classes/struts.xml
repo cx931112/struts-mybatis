@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<action-mappings>
+	<package name="default" namespace="">
+		
+		
+
+ 		<action	name="checkUsername"	classPath="com.itany.p2p.action.UserAction"	method="checkUsername"></action>
+ 		<action	name="toRegist"	classPath="com.itany.p2p.action.UserAction"	method="regist">
+ 			<result	type=""	name="success"	path="login.jsp"></result>
+ 		</action>
+ 		<action	name="loginCheck"	classPath="com.itany.p2p.action.UserAction"	method="loginCheck"></action>
+ 		<action	name="toLogin"	classPath="com.itany.p2p.action.UserAction"	method="toLogin">
+ 			<result	name="success"	type="dispatcher"	path="/WEB-INF/backMain.jsp"></result>
+ 			<result	name="fail"	type="dispatcher"	path="main.jsp"></result>
+ 		</action>
+ 		<action	name="allTest"	classPath="com.itany.p2p.action.TestAction"	method="getAllTest">
+ 			<result	name="success"	type="dispatcher"	path="allTest.jsp"></result>
+ 		</action>
+ 		<action	name="applyCheck"	classPath="com.itany.p2p.action.TestAction"	method="applyCheck">
+ 		</action>
+ 		 		<action	name="HaveApplyTest"	classPath="com.itany.p2p.action.TestAction"	method="getHaveApplyTest">
+ 			<result	name="success"	type="dispatcher"	path="HaveApplyTest.jsp"></result>
+ 		</action>
+ 		 <action	name="testProduct"	classPath="com.itany.p2p.action.TestAction"	method="getAllTest">
+ 			<result	name="success"	type="dispatcher"	path="/WEB-INF/getAllTest.jsp"></result>
+ 		</action>
+ 		<action	name="deleteTest"	classPath="com.itany.p2p.action.TestAction"	method="deleteTest"></action>
+ 		<action	name="userProduct"	classPath="com.itany.p2p.action.UserAction"	method="getAllUser">
+ 			<result	name="success"	type="dispatcher"	path="/WEB-INF/getAllUser.jsp"></result>
+ 		</action>
+ 		<action	name="deleteUser"	classPath="com.itany.p2p.action.UserAction"	method="deleteUser">
+ 			
+ 		</action>
+ 		<action	name="checkAdmin"	classPath="com.itany.p2p.action.UserAction"	method="checkAdmin">
+ 		</action>
+ 		<action	name="adminAdd"		classPath="com.itany.p2p.action.UserAction"	method="adminAdd">
+ 			<result	name="success"	type=""	path="userProduct.do"></result>
+ 		</action>
+ 		<action	name="changeStatus"	classPath="com.itany.p2p.action.UserAction"	method="changeStatus">
+ 			
+ 		</action>
+ 		<action	name="testCheck"	classPath="com.itany.p2p.action.TestAction"	method="testCheck"></action>
+ 		<action	name="testAdd"	classPath="com.itany.p2p.action.TestAction"	method="testAdd">
+ 			<result	name="success"	type=""	path="testProduct.do"></result>
+ 		</action>
+ 		<action	name="selectUserByName"	classPath="com.itany.p2p.action.UserAction"	method="selectUserByName"></action>
+ 		<action	name="passChange"	classPath="com.itany.p2p.action.UserAction"	method="passChange"></action>
+ 		<action	name="loginAgin"	classPath="com.itany.p2p.action.UserAction"	method="loginAgin">
+ 			<result	name="success"	type=""	path="login.jsp"></result>
+ 		</action>
+	</package>	
+</action-mappings>

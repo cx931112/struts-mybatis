@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<digester-rules>
+	<pattern value="action-mappings">
+		<pattern value="package">
+			<object-create-rule classname="com.itany.p2p.config.PackageConfig" />
+			<set-next-rule methodname="addPackage" />
+			<set-properties-rule />
+			<pattern value="action">
+				<object-create-rule classname="com.itany.p2p.config.ActionConfig" />
+				<set-next-rule methodname="addAction" />
+				<set-properties-rule />
+
+				<pattern value="result">
+					<object-create-rule classname="com.itany.p2p.config.ResultConfig" />
+					<set-next-rule methodname="addResult" />
+					<set-properties-rule />
+				</pattern>
+			</pattern>
+
+		</pattern>
+
+		<pattern value="include">
+			<object-create-rule classname="com.itany.p2p.config.IncludeConfig" />
+			<set-next-rule methodname="addInclude" />
+			<set-properties-rule />
+
+		</pattern>
+
+	</pattern>
+</digester-rules>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.itany.p2p.dao.TestDao">
+	
+	<select	id="getAllTest"	resultType="com.itany.p2p.entity.Test">
+		select	*	from	alltest
+	</select>
+		<select	id="getApply"		parameterType="com.itany.p2p.entity.Apply"	resultType="int">
+		select	count(*)	from	apply
+		where	username=#{userName}	and	testname=#{testName}
+	</select>
+	<insert	id="apply"	parameterType="com.itany.p2p.entity.Apply">
+	insert	into	apply	(username,testname)
+	values		(#{userName},#{testName})
+	</insert>
+	<select	id="getHaveApply"	parameterType="com.itany.p2p.entity.Apply"	resultType="com.itany.p2p.entity.Apply">
+		select	*	from	apply
+		where	username=#{userName}
+	</select>
+	<delete	id="deleteTest"	parameterType="com.itany.p2p.entity.Test">
+			delete	from	alltest
+			where	id=#{id}
+	</delete>
+	<select	id="testCheck"	parameterType="com.itany.p2p.entity.Test"	resultType="int">
+		select	count(*)	from	alltest
+		where	testname=#{testName}
+	</select>
+	<insert	id="testAdd"	parameterType="com.itany.p2p.entity.Test">
+		insert	into	alltest	(testname,teststart,testend)
+		values(#{testName},#{testStart},#{testEnd})
+	</insert>
+</mapper>

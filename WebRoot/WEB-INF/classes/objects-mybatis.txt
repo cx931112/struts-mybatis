@@ -1,0 +1,4 @@
+transAction=com.itany.p2p.transaction.impl.MyBatisTransactionManagerImpl
+mybatisDao=com.itany.p2p.dao
+userService=com.itany.p2p.service.impl.UserServiceImpl
+testService=com.itany.p2p.service.impl.TestServiceImpl
